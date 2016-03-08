@@ -1,0 +1,40 @@
+﻿@model PhotoAlbum.WEB.Models.PhotoListViewModel
+
+@{
+    ViewBag.Title = "Photos";
+}
+@*Render the second navigation bar*@
+@section additionalBar
+{
+    @{ Html.RenderPartial("_NavigationBar"); }
+}
+<div id="photos">
+    @foreach (var p in @Model.Photos)
+    {
+        Html.RenderPartial("_SharedPhotoSummary", p);
+    }
+</div>
+
+<div>
+    @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new { page = x }))
+</div>
+
+@section scripts {
+    @Scripts.Render("~/bundles/ensure-cookies-enabled")
+    @Scripts.Render("~/bundles/bootstrap-modal-form")
+    @Scripts.Render("~/bundles/fancybox")
+    @Scripts.Render("~/bundles/rateit")
+    @Scripts.Render("~/bundles/rated")
+    @Scripts.Render("~/bundles/additional-nav-bar")
+
+    <script language="JavaScript" type="text/javascript">
+        $(function () {
+            //Applying fancybox
+            $("a[rel=image]").fancybox({
+                type: 'image'
+            });
+        })
+    </script>
+}
+
+

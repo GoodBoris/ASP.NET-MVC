@@ -1,0 +1,16 @@
+﻿@model HandleErrorInfo
+<head>
+    <title>Error</title>
+</head>
+<body>
+    @if (@Model != null)
+    {
+        <h2 class="text-danger">Error.@Model.Exception.GetType().Name</h2>
+        <h3 class="text-danger">Error.@Model.Exception.Message</h3>
+        @Html.ActionLink("Back", @Model.ActionName, @Model.ControllerName, null, new { @class = "btn btn-warning" });
+    }
+    else
+    {
+        <h2 class="text-danger">An error occurred while processing your request.</h2>
+    }
+</body>

@@ -1,0 +1,20 @@
+﻿@model PhotoAlbum.WEB.Models.PhotoViewModel
+
+<div class="well face">
+    <a rel="image" href="@Url.Action("GetImage", "Photo", new {Model.PhotoId})">
+        <img src="@Url.Action("GetImage", "Photo", new {Model.PhotoId})" class="img-thumbnail" width="300" height="300" alt="" />
+    </a>
+    <h3>
+        <span class="label label-default"> @Model.Name</span>
+        @Html.NoEncodeActionLink("<span class='glyphicon glyphicon-edit'></span>", "Edit", "Edit", "Photo"
+                , new { id = @Model.PhotoId }
+                , new { data_modal = "", @class = "btn btn-info" })
+        @Html.NoEncodeActionLink("<span class='glyphicon glyphicon-trash'></span>", "Delete", "Delete", "Photo"
+                , new { id = @Model.PhotoId }
+                , new { data_modal = "", @class = "btn btn-danger" })
+    </h3>
+    <span class="lead">@Model.Description</span>
+    <br>Added: @Model.TimeOfCreation.ToString("dd MMMM yyyy, HH:mm")<br>
+    Average Raiting <span class="rateit" id="@Model.PhotoId" data-rateit-readonly="true" data-rateit-ispreset="true"
+                          data-rateit-value="@Model.AverageRating.ToString("0.00000", System.Globalization.CultureInfo.InvariantCulture)"></span>
+</div>

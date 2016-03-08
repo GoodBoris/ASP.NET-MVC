@@ -1,0 +1,19 @@
+﻿@using PhotoAlbum.WEB.HtmlHelpers.Models
+@{
+    var alerts = TempData.ContainsKey(Alert.TempDataKey)
+                ? (List<Alert>)TempData[Alert.TempDataKey]
+                : new List<Alert>();
+
+    foreach (var alert in alerts)
+    {
+        var dismissableClass = alert.Dismissable? "alert-dismissable" : null;
+        <div class="alert alert-@alert.AlertStyle fade in @dismissableClass">
+            @if (alert.Dismissable)
+            {
+                <button type="button" class="close" aria-label="close" data-dismiss="alert">&times;</button>
+            }
+            @Html.Raw(alert.Message)
+        </div>
+    }
+}
+

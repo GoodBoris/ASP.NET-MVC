@@ -1,0 +1,43 @@
+﻿<nav class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container-fluid">
+        <ul class="nav navbar-nav">
+            <li class="radio radio-group">
+                <label class="radio-inline">
+                    <input type="radio" name="sorting" value="0" onchange="sort(this)">Popular first
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="sorting" value="1" onchange="sort(this)">Newest first
+                </label>
+            </li>
+        </ul>
+        <div id="dropDownDiv" data-model="@Json.Encode(@Model.PagingInfo.ItemsPerPage)"></div>
+            <ul class="nav navbar-nav navbar-right items-selector">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button">
+                        <span class="glyphicon glyphicon-list-alt"></span>
+                        Items per page: <b>@Model.PagingInfo.ItemsPerPage</b>
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">10</a></li>
+                        <li><a href="#">20</a></li>
+                    </ul>
+                </li>
+            </ul>
+    </div>
+</nav>
+
+<style type="text/css">
+    body {
+        padding-top: 50px;
+    }
+    .radio-group {
+        margin: 15px;
+        padding-left: 112px;
+    }
+    .items-selector {
+        padding-right:34px;
+    }
+</style>
+

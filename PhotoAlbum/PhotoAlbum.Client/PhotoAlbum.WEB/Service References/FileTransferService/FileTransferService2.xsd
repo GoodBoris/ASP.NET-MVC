@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Service.Views.FileTransfer" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Service.Views.FileTransfer" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8117/FileTransferService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ImageMetaData">
+    <xs:sequence>
+      <xs:element name="ImageId" type="ser:guid" />
+      <xs:element name="ImageMimeType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ImageMetaData" nillable="true" type="tns:ImageMetaData" />
+</xs:schema>

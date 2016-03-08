@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="0df5b02e-0781-40c7-87e9-a5043134835d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://beluga:8117/PhotoAlbumService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PhotoAlbumService.xsd" MetadataType="Schema" ID="5bcdee89-ff80-4d7f-8705-7564d7ce1503" SourceId="1" SourceUrl="http://beluga:8117/PhotoAlbumService.svc?xsd=xsd4" />
+    <MetadataFile FileName="PhotoAlbumService1.xsd" MetadataType="Schema" ID="bf744079-2750-47c4-ad16-042e01708a10" SourceId="1" SourceUrl="http://beluga:8117/PhotoAlbumService.svc?xsd=xsd3" />
+    <MetadataFile FileName="PhotoAlbumService2.xsd" MetadataType="Schema" ID="8e5c7d4c-0feb-4e92-aaa0-28118d310c00" SourceId="1" SourceUrl="http://beluga:8117/PhotoAlbumService.svc?xsd=xsd2" />
+    <MetadataFile FileName="PhotoAlbumService3.xsd" MetadataType="Schema" ID="f8e09774-1a7b-48b5-acce-5778e4d006f0" SourceId="1" SourceUrl="http://beluga:8117/PhotoAlbumService.svc?xsd=xsd1" />
+    <MetadataFile FileName="PhotoAlbumService4.xsd" MetadataType="Schema" ID="1583ddca-4441-496f-8655-ebbf71f0a19a" SourceId="1" SourceUrl="http://beluga:8117/PhotoAlbumService.svc?xsd=xsd0" />
+    <MetadataFile FileName="PhotoAlbumService.disco" MetadataType="Disco" ID="4ca45b46-7877-461c-9363-504ff837347c" SourceId="1" SourceUrl="http://beluga:8117/PhotoAlbumService.svc?disco" />
+    <MetadataFile FileName="PhotoAlbumService.wsdl" MetadataType="Wsdl" ID="43a49e5f-4f1b-45bb-8ffc-952fe842296f" SourceId="1" SourceUrl="http://beluga:8117/PhotoAlbumService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h1>Photo Album Application</h1>
+    </div>
+    <div class="panel-body"><div class="jumbotron"><h2>System information:</h2><p class="lead"><div id="demo"></div></p></div></div>
+</div>
+
+<script type="text/javascript">
+    var txt = "";
+    txt += "<p>Browser CodeName: " + navigator.appCodeName + "</p>";
+    txt += "<p>Browser Name: " + navigator.appName + "</p>";
+    txt += "<p>Browser Version: " + navigator.appVersion + "</p>";
+    var cookieEnabled = navigator.cookieEnabled;
+    txt += "<p>Cookies Enabled: ";
+    txt += !cookieEnabled ? "<b><mark>" + cookieEnabled + "</mark></b>" + "</p>" : cookieEnabled + "</p>";
+    txt += "<p>Browser Language: " + navigator.language + "</p>";
+    txt += "<p>Browser Language: " + navigator.language + "</p>";
+    txt += "<p>Platform: " + navigator.platform + "</p>";
+    txt += "<p>User-agent header: " + "@Html.ViewContext.HttpContext.Request.Browser.Browser v @Html.ViewContext.HttpContext.Request.Browser.Version" + "</p>";
+    document.getElementById("demo").innerHTML = txt;
+</script>

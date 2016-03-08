@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="PhotoAlbumService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://beluga:8117/PhotoAlbumService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://beluga:8117/PhotoAlbumService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Service.Utilities.PhotoAlbum" />
+      <xsd:import schemaLocation="http://beluga:8117/PhotoAlbumService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://beluga:8117/PhotoAlbumService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Service.Messages.Photo" />
+      <xsd:import schemaLocation="http://beluga:8117/PhotoAlbumService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/PhotoAlbum.DAL.Utilities" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IPhotoAlbumService_CreatePhoto_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePhoto" />
+  </wsdl:message>
+  <wsdl:message name="IPhotoAlbumService_CreatePhoto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePhotoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPhotoAlbumService_CreatePhoto_CustomExpMsgFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/Service.Utilities.PhotoAlbum" name="detail" element="q1:CustomExpMsg" />
+  </wsdl:message>
+  <wsdl:message name="IPhotoAlbumService_DeletePhoto_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePhoto" />
+  </wsdl:message>
+  <wsdl:message name="IPhotoAlbumService_DeletePhoto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePhotoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPhotoAlbumService_DeletePhoto_CustomExpMsgFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/Service.Utilities.PhotoAlbum" name="detail" element="q2:CustomExpMsg" />
+  </wsdl:message>
+  <wsdl:message name="IPhotoAlbumService_UpdatePhoto_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePhoto" />
+  </wsdl:message>
+  <wsdl:message name="IPhotoAlbumService_UpdatePhoto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePhotoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPhotoAlbumService_UpdatePhoto_CustomExpMsgFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/Service.Utilities.PhotoAlbum" name="detail" element="q3:CustomExpMsg" />
+  </wsdl:message>
+  <wsdl:message name="IPhotoAlbumService_AddVote_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddVote" />
+  </wsdl:message>
+  <wsdl:message name="IPhotoAlbumService_AddVote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddVoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPhotoAlbumService_AddVote_CustomExpMsgFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/Service.Utilities.PhotoAlbum" name="detail" element="q4:CustomExpMsg" />
+  </wsdl:message>
+  <wsdl:message name="IPhotoAlbumService_CountPhotosById_InputMessage">
+    <wsdl:part name="parameters" element="tns:CountPhotosById" />
+  </wsdl:message>
+  <wsdl:message name="IPhotoAlbumService_CountPhotosById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CountPhotosByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPhotoAlbumService_CountPhotosById_CustomExpMsgFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/Service.Utilities.PhotoAlbum" name="detail" element="q5:CustomExpMsg" />
+  </wsdl:message>
+  <wsdl:message name="IPhotoAlbumService_CountPhotosByUserName_InputMessage">
+    <wsdl:part name="parameters" element="tns:CountPhotosByUserName" />
+  </wsdl:message>
+  <wsdl:message name="IPhotoAlbumService_CountPhotosByUserName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CountPhotosByUserNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPhotoAlbumService_CountPhotosByUserName_CustomExpMsgFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/Service.Utilities.PhotoAlbum" name="detail" element="q6:CustomExpMsg" />
+  </wsdl:message>
+  <wsdl:message name="IPhotoAlbumService_GetPhotosByOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPhotosByOrder" />
+  </wsdl:message>
+  <wsdl:message name="IPhotoAlbumService_GetPhotosByOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPhotosByOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPhotoAlbumService_GetPhotosByOrder_CustomExpMsgFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/Service.Utilities.PhotoAlbum" name="detail" element="q7:CustomExpMsg" />
+  </wsdl:message>
+  <wsdl:message name="IPhotoAlbumService_GetPhotosByDefaultOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPhotosByDefaultOrder" />
+  </wsdl:message>
+  <wsdl:message name="IPhotoAlbumService_GetPhotosByDefaultOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPhotosByDefaultOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPhotoAlbumService_GetPhotosByDefaultOrder_CustomExpMsgFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/Service.Utilities.PhotoAlbum" name="detail" element="q8:CustomExpMsg" />
+  </wsdl:message>
+  <wsdl:message name="IPhotoAlbumService_FindPhotoById_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindPhotoById" />
+  </wsdl:message>
+  <wsdl:message name="IPhotoAlbumService_FindPhotoById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindPhotoByIdResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IPhotoAlbumService">
+    <wsdl:operation name="CreatePhoto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPhotoAlbumService/CreatePhoto" message="tns:IPhotoAlbumService_CreatePhoto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPhotoAlbumService/CreatePhotoResponse" message="tns:IPhotoAlbumService_CreatePhoto_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPhotoAlbumService/CreatePhotoCustomExpMsgFault" name="CustomExpMsgFault" message="tns:IPhotoAlbumService_CreatePhoto_CustomExpMsgFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePhoto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPhotoAlbumService/DeletePhoto" message="tns:IPhotoAlbumService_DeletePhoto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPhotoAlbumService/DeletePhotoResponse" message="tns:IPhotoAlbumService_DeletePhoto_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPhotoAlbumService/DeletePhotoCustomExpMsgFault" name="CustomExpMsgFault" message="tns:IPhotoAlbumService_DeletePhoto_CustomExpMsgFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePhoto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPhotoAlbumService/UpdatePhoto" message="tns:IPhotoAlbumService_UpdatePhoto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPhotoAlbumService/UpdatePhotoResponse" message="tns:IPhotoAlbumService_UpdatePhoto_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPhotoAlbumService/UpdatePhotoCustomExpMsgFault" name="CustomExpMsgFault" message="tns:IPhotoAlbumService_UpdatePhoto_CustomExpMsgFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddVote">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPhotoAlbumService/AddVote" message="tns:IPhotoAlbumService_AddVote_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPhotoAlbumService/AddVoteResponse" message="tns:IPhotoAlbumService_AddVote_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPhotoAlbumService/AddVoteCustomExpMsgFault" name="CustomExpMsgFault" message="tns:IPhotoAlbumService_AddVote_CustomExpMsgFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CountPhotosById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPhotoAlbumService/CountPhotosById" message="tns:IPhotoAlbumService_CountPhotosById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPhotoAlbumService/CountPhotosByIdResponse" message="tns:IPhotoAlbumService_CountPhotosById_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPhotoAlbumService/CountPhotosByIdCustomExpMsgFault" name="CustomExpMsgFault" message="tns:IPhotoAlbumService_CountPhotosById_CustomExpMsgFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CountPhotosByUserName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPhotoAlbumService/CountPhotosByUserName" message="tns:IPhotoAlbumService_CountPhotosByUserName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPhotoAlbumService/CountPhotosByUserNameResponse" message="tns:IPhotoAlbumService_CountPhotosByUserName_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPhotoAlbumService/CountPhotosByUserNameCustomExpMsgFault" name="CustomExpMsgFault" message="tns:IPhotoAlbumService_CountPhotosByUserName_CustomExpMsgFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPhotosByOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPhotoAlbumService/GetPhotosByOrder" message="tns:IPhotoAlbumService_GetPhotosByOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPhotoAlbumService/GetPhotosByOrderResponse" message="tns:IPhotoAlbumService_GetPhotosByOrder_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPhotoAlbumService/GetPhotosByOrderCustomExpMsgFault" name="CustomExpMsgFault" message="tns:IPhotoAlbumService_GetPhotosByOrder_CustomExpMsgFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPhotosByDefaultOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPhotoAlbumService/GetPhotosByDefaultOrder" message="tns:IPhotoAlbumService_GetPhotosByDefaultOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPhotoAlbumService/GetPhotosByDefaultOrderResponse" message="tns:IPhotoAlbumService_GetPhotosByDefaultOrder_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPhotoAlbumService/GetPhotosByDefaultOrderCustomExpMsgFault" name="CustomExpMsgFault" message="tns:IPhotoAlbumService_GetPhotosByDefaultOrder_CustomExpMsgFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindPhotoById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPhotoAlbumService/FindPhotoById" message="tns:IPhotoAlbumService_FindPhotoById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPhotoAlbumService/FindPhotoByIdResponse" message="tns:IPhotoAlbumService_FindPhotoById_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IPhotoAlbumService" type="tns:IPhotoAlbumService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreatePhoto">
+      <soap:operation soapAction="http://tempuri.org/IPhotoAlbumService/CreatePhoto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CustomExpMsgFault">
+        <soap:fault use="literal" name="CustomExpMsgFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePhoto">
+      <soap:operation soapAction="http://tempuri.org/IPhotoAlbumService/DeletePhoto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CustomExpMsgFault">
+        <soap:fault use="literal" name="CustomExpMsgFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePhoto">
+      <soap:operation soapAction="http://tempuri.org/IPhotoAlbumService/UpdatePhoto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CustomExpMsgFault">
+        <soap:fault use="literal" name="CustomExpMsgFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddVote">
+      <soap:operation soapAction="http://tempuri.org/IPhotoAlbumService/AddVote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CustomExpMsgFault">
+        <soap:fault use="literal" name="CustomExpMsgFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CountPhotosById">
+      <soap:operation soapAction="http://tempuri.org/IPhotoAlbumService/CountPhotosById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CustomExpMsgFault">
+        <soap:fault use="literal" name="CustomExpMsgFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CountPhotosByUserName">
+      <soap:operation soapAction="http://tempuri.org/IPhotoAlbumService/CountPhotosByUserName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CustomExpMsgFault">
+        <soap:fault use="literal" name="CustomExpMsgFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPhotosByOrder">
+      <soap:operation soapAction="http://tempuri.org/IPhotoAlbumService/GetPhotosByOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CustomExpMsgFault">
+        <soap:fault use="literal" name="CustomExpMsgFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPhotosByDefaultOrder">
+      <soap:operation soapAction="http://tempuri.org/IPhotoAlbumService/GetPhotosByDefaultOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CustomExpMsgFault">
+        <soap:fault use="literal" name="CustomExpMsgFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindPhotoById">
+      <soap:operation soapAction="http://tempuri.org/IPhotoAlbumService/FindPhotoById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PhotoAlbumService">
+    <wsdl:port name="BasicHttpBinding_IPhotoAlbumService" binding="tns:BasicHttpBinding_IPhotoAlbumService">
+      <soap:address location="http://beluga:8117/PhotoAlbumService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

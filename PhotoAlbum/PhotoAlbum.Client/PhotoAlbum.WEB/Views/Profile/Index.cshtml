@@ -1,0 +1,36 @@
+﻿@using PhotoAlbum.WEB.Models
+@model IndexViewModel
+
+@{
+    ViewBag.Title = "Profile";
+}
+
+<h2>@ViewBag.Title.</h2>
+<fieldset>
+    <legend>Contact Info</legend>
+
+    <div class="display-field gly">
+        User Name: @Html.DisplayFor(model => model.UserName)
+    </div>
+
+    <div class="display-field">
+        Email: @Html.DisplayFor(model => model.Email)
+    </div>
+
+    <div class="display-field">
+        Full Name: @Html.DisplayFor(model => model.FullName)
+    </div>
+</fieldset>
+<div>
+    <h4>Change your account settings</h4>
+    <dl class="dl-horizontal">
+        <dt>User Info:</dt>
+        <dd>[@Html.ActionLink("Change your main settings profile", "ChangeUserInfo")]</dd>
+        <dt>Password:</dt>
+        <dd>[@Html.ActionLink("Change your password", "ChangePassword")]</dd>
+    </dl>
+</div>
+
+@section scripts {
+    @Scripts.Render("~/bundles/ensure-cookies-enabled")
+}

@@ -1,0 +1,37 @@
+﻿@using Microsoft.AspNet.Identity
+@model PhotoAlbum.WEB.Models.ChangeUserInfoViewModel
+
+@{
+    ViewBag.Title = "User Info";
+}
+
+<h2>@ViewBag.Title.</h2>
+
+@using (Html.BeginForm("ChangeUserInfo", "Profile", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <h4>Change User Info Form</h4>
+    @Html.HiddenFor(m => m.UserId, new { @Value = User.Identity.GetUserId() })
+    @Html.HiddenFor(m => m.UserName, new { @Value = User.Identity.GetUserName() })
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(m => m.FullName, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10, col-lg-offset-1">
+            @Html.TextBoxFor(m => m.FullName, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10, col-lg-offset-1">
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-10, col-lg-offset-2">
+            <input type="submit" value="Change UserInfo" class="btn btn-success" />
+        </div>
+    </div>
+}
+@section scripts {
+    @Scripts.Render("~/bundles/ensure-cookies-enabled")
+}

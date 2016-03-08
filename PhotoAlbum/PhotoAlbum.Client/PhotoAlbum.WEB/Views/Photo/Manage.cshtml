@@ -1,0 +1,56 @@
+﻿@model PhotoAlbum.WEB.Models.PhotoListViewModel
+
+@{
+    ViewBag.Title = "My Photos";
+}
+
+<div id='myModal' class='modal fade in'>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div id='myModalContent'></div>
+        </div>
+    </div>
+</div>
+
+@*It would be better to use ng-show()/ng-hide() here. But we didn't apply AngularJS*@
+@if (!@Model.Photos.Any())
+{
+    @Html.NoEncodeActionLink("<span class='glyphicon glyphicon-plus'>Add My First Photo</span>", "Add", "Create", "Photo"
+        , null
+        , new { data_modal = "", @class = "btn btn-success" })
+}
+else
+{
+    @section additionalBar{ @{ Html.RenderPartial("_NavigationBar"); } }
+        foreach (var p in @Model.Photos)
+        {
+            <div class="pull-right add-button">
+                @Html.NoEncodeActionLink("<span class='glyphicon glyphicon-plus'> New Photo</span>", "Add", "Create", "Photo"
+                , null
+                , new { data_modal = "", @class = "btn btn-success" }) <br>
+            </div>
+                {
+                    Html.RenderPartial("_UserPhotoSummary", p);
+                }
+            }
+        }
+
+<div>
+    @Html.PageLinks(Model.PagingInfo, x => Url.Action("Manage", new { page = x, currentUser = Model.CurrentUser }))
+</div>
+
+@section scripts {
+    @Scripts.Render("~/bundles/ensure-cookies-enabled")
+    @Scripts.Render("~/bundles/bootstrap-modal-form")
+    @Scripts.Render("~/bundles/fancybox")
+    @Scripts.Render("~/bundles/rateit")
+    @Scripts.Render("~/bundles/additional-nav-bar")
+    <script language="JavaScript" type="text/javascript">
+        $(function () {
+            //Applying fancybox
+            $("a[rel=image]").fancybox({
+                type: 'image'
+            });
+        });
+    </script>
+}

@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title – Photo Album</title>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/themes/base/all.css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <a class="navbar-brand" href="http://technologika.ru/" title="Company Brand">
+                <img style="max-width: 100px; margin-top: -7px;" alt="Brand" src="/Content/images/techno_logo.png">
+            </a>
+        </div>
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    @Html.MenuLink("All photos", "List", "Photo")
+                    @Html.MenuLink("My photos", "Manage", "Photo", new { currentUser = @User.Identity.Name })
+                    @Html.MenuLink("About application", "About", "Home")
+                    @Html.MenuLink("Contact", "Contact", "Home")
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    @RenderSection("additionalBar", required: false)
+    @{ Html.RenderPartial("_Alerts"); }
+    <div class="container body-content">
+        @RenderBody()
+
+
+    </div>
+    <hr />
+    <footer class="col-xs-offset-1">
+        <ul class="list-inline">
+            <li><a href="https://www.facebook.com/profile.php?id=100003975819824" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="https://vk.com/boris.illarionov" class="icoVk" title="Vkontakte"><i class="fa fa-vk"></i></a></li>
+            <li><a href="https://plus.google.com/102017782026501985110/posts" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
+        </ul>
+        <p>&copy; @DateTime.Now.Year – created by Boris Illarionov</p>
+    </footer>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jquerycookie")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/alert")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

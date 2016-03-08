@@ -1,0 +1,26 @@
+﻿@model PhotoAlbum.WEB.Models.PhotoViewModel
+<div class="well face">
+    <a rel="image" href="@Url.Action("GetImage", "Photo", new {Model.PhotoId})">
+        <img src="@Url.Action("GetImage", "Photo", new {Model.PhotoId})" class="img-thumbnail" width="300" height="300" alt=""/>
+    </a>
+    <h3>
+        <span class="label label-default">@Model.Name</span>
+    </h3>
+    <span class="lead">@Model.Description</span>
+    <br>Added by: @Html.ActionLink(@Model.UserName, "List", new {userPhotos = @Model.UserName})
+    @Model.TimeOfCreation.ToString("dd MMMM yyyy, HH:mm") <br>
+    Average Raiting <span class="rateit" id="@Model.PhotoId" data-rateit-readonly="true" data-rateit-ispreset="true"
+                          data-rateit-value="@Model.AverageRating.ToString("0.00000", System.Globalization.CultureInfo.InvariantCulture)"></span>
+    @*Use Angular ng-show() here
+        Condition to add create button if there is no photo yet*@
+
+    @if (Request.Cookies[@Model.PhotoId.ToString()] == null)
+    {
+        @:My rating <span class="rateit set-rating" data-rateit-resetable="false" data-photoid="@Model.PhotoId"></span>
+    }
+    else
+    {
+        @:My rating <span class="rateit set-rating" data-rateit-resetable="false" data-rateit-readonly="true" data-rateit-ispreset="true" data-rateit-value=@Request.Cookies[Model.PhotoId.ToString()].Value data-photoid="@Model.PhotoId"></span>
+        <span style="color: #2ecc71">Thanks for your vote!</span>
+    }
+</div>
